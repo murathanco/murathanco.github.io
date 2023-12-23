@@ -1,1 +1,91 @@
-<h1> Hello World </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Board App</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <style>
+        body {
+            font-family: 'Cabin Grotesk', sans-serif !important;
+            background-color: #f7f7f7 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100vh !important;
+        }
+    
+        .container {
+            text-align: center !important;
+            max-width: 80% !important;
+            padding: 20px !important;
+            background-color: #fff !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+    
+        h1 {
+            font-size: 24px !important;
+            margin-bottom: 20px !important;
+        }
+    
+        p {
+            font-size: 16px !important;
+        }
+    
+        a.button {
+            display: inline-block !important;
+            padding: 10px 20px !important;
+            background-color: #0070c9 !important;
+            color: #fff !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            border-radius: 5px !important;
+        }
+    
+        a.button:hover {
+            background-color: #00589c !important;
+        }
+    
+        .copyright {
+            font-size: 12px !important;
+            margin-top: 20px !important;
+            color: #999 !important;
+        }
+    
+        /* Additional mobile-friendly styles */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90% !important;
+            }
+        }
+    </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        function handleRedirection() {
+            var path = window.location.pathname;
+            var occasionid = path.substring(1);
+            
+            if (occasionid.length > 0) {
+                var customURL = 'gotboard://' + occasionid;
+                window.location.href = customURL;
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        window.onload = handleRedirection;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Seems like you need to get on Board</h1>
+        <p>If you are not redirected to the Board app, <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="button">Download Board</a></p>
+        <p class="copyright">&copy; Murathan Biliktu, Board. All rights reserved.</p>
+    </div>
+</body>
+</html>
